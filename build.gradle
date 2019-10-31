@@ -6,7 +6,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
     }
 }
 
@@ -19,4 +19,13 @@ repositories {
 
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+}
+
+bootRun {
+    environment("WELCOME_MESSAGE", "hello")
+}
+
+test {
+    environment("WELCOME_MESSAGE", "Hello from test")
 }

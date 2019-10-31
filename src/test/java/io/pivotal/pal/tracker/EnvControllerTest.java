@@ -1,4 +1,4 @@
-package test.pivotal.pal.tracker;
+package io.pivotal.pal.tracker;
 
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class EnvControllerTest {
     @Test
-    public void getEnv() throws Exception {
+    public void getEnv() {
         EnvController controller = new EnvController(
             "8675",
             "12G",
