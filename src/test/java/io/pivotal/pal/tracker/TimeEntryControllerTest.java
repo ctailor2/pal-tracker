@@ -1,8 +1,5 @@
-package test.pivotal.pal.tracker;
+package io.pivotal.pal.tracker;
 
-import io.pivotal.pal.tracker.TimeEntry;
-import io.pivotal.pal.tracker.TimeEntryController;
-import io.pivotal.pal.tracker.TimeEntryRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
@@ -115,7 +112,7 @@ public class TimeEntryControllerTest {
             .when(timeEntryRepository)
             .update(eq(nonExistentTimeEntryId), any(TimeEntry.class));
 
-        ResponseEntity response = controller.update(nonExistentTimeEntryId, new TimeEntry());
+        ResponseEntity response = controller.update(nonExistentTimeEntryId, new TimeEntry(1L, 2L, LocalDate.now(), 12));
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
