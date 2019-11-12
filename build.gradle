@@ -52,6 +52,7 @@ test {
     environment("SPRING_DATASOURCE_URL", testDbUrl)
     environment("MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE", "*")
     environment("MANAGEMENT_ENDPOINT_HEALTH_SHOWDETAILS", "always")
+    environment("MANAGEMENT_ENDPOINTS_WEB_BASE-PATH", "/actuator/")
 }
 
 flyway {
