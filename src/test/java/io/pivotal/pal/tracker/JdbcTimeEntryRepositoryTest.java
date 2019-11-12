@@ -1,4 +1,4 @@
-package test.pivotal.pal.tracker;
+package io.pivotal.pal.tracker;
 
 
 import com.mysql.cj.jdbc.MysqlDataSource;
