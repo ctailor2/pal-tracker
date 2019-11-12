@@ -29,7 +29,7 @@ public class HealthApiTest {
     public void setUp() throws Exception {
         RestTemplateBuilder builder = new RestTemplateBuilder()
             .rootUri("http://localhost:" + port)
-            .basicAuthorization("user", "password");
+            .basicAuthentication("user", "password");
 
         restTemplate = new TestRestTemplate(builder);
     }
@@ -44,7 +44,7 @@ public class HealthApiTest {
         DocumentContext healthJson = parse(response.getBody());
 
         assertThat(healthJson.read("$.status", String.class)).isEqualTo("UP");
-        assertThat(healthJson.read("$.details.db.status", String.class)).isEqualTo("UP");
-        assertThat(healthJson.read("$.details.diskSpace.status", String.class)).isEqualTo("UP");
+        assertThat(healthJson.read("$.components.db.status", String.class)).isEqualTo("UP");
+        assertThat(healthJson.read("$.components.diskSpace.status", String.class)).isEqualTo("UP");
     }
 }
