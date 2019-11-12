@@ -15,6 +15,7 @@ buildscript {
 plugins {
     id "java"
     id "org.flywaydb.flyway" version "5.2.4"
+    id "com.gorylenko.gradle-git-properties" version "1.5.1"
 }
 
 apply plugin: "org.springframework.boot"
